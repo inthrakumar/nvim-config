@@ -5,6 +5,7 @@ return {
   {
     "L3MON4D3/LuaSnip",
     dependencies = {
+            "mlaursen/vim-react-snippets",
       "saadparwaiz1/cmp_luasnip",
       "rafamadriz/friendly-snippets",
     },
@@ -14,7 +15,7 @@ return {
     config = function()
       local cmp = require("cmp")
       require("luasnip.loaders.from_vscode").lazy_load()
-
+    require("vim-react-snippets").lazy_load()
       cmp.setup({
         snippet = {
           expand = function(args)

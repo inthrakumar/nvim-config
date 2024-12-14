@@ -26,6 +26,12 @@ return {
       lspconfig.solargraph.setup({
         capabilities = capabilities
       })
+      lspconfig.clangd.setup({
+        capabilities=capabilities
+      })
+        lspconfig.pyright.setup({
+                capabilities=capabilities
+            })
       lspconfig.html.setup({
         capabilities = capabilities
       })

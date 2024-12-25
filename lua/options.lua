@@ -1,6 +1,6 @@
 local opt = vim.opt
 
-opt.wrap = true
+opt.wrap = false
 opt.breakindent = true
 opt.autowrite = true -- Enable auto write
 opt.clipboard = "unnamedplus" -- Sync with system clipboard
@@ -43,7 +43,7 @@ opt.undolevels = 10000
 opt.swapfile = false
 opt.wildmode = "longest:full,full" -- Command-line completion mode
 opt.winminwidth = 5 -- Minimum window width
-opt.wrap = true -- Disable line wrap
+opt.wrap = false -- Disable line wrap
 
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0

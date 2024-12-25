@@ -31,5 +31,6 @@
   "telescope-ui-select.nvim": { "branch": "master", "commit": "6e51d7da30bd139a6950adf2a47fda6df9fa06d2" },
   "telescope.nvim": { "branch": "master", "commit": "d90956833d7c27e73c621a61f20b29fdb7122709" },
   "vim-fugitive": { "branch": "master", "commit": "fcb4db52e7f65b95705aa58f0f2df1312c1f2df2" },
-  "vim-react-snippets": { "branch": "main", "commit": "2a845ec02b2eb9db79acf0329c70a682682a27b6" }
+  "vim-react-snippets": { "branch": "main", "commit": "2a845ec02b2eb9db79acf0329c70a682682a27b6" },
+  "vim-visual-multi": { "branch": "master", "commit": "a6975e7c1ee157615bbc80fc25e4392f71c344d4" }
 }

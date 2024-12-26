@@ -46,5 +46,5 @@ opt.winminwidth = 5 -- Minimum window width
 opt.wrap = false -- Disable line wrap
 
 -- Fix markdown indentation settings
+vim.cmd([[colorscheme catppuccin]])
 vim.g.markdown_recommended_style = 0
-

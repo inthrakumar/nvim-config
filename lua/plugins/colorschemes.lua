@@ -12,6 +12,17 @@ return {
         end,
     },
     {
+        'navarasu/onedark.nvim',
+        lazy=false,
+        config=function ()
+            require('onedark').setup{
+                style='darker'
+            }
+            
+        end
+
+    },
+    {
         "maxmx03/solarized.nvim",
         lazy = false,
         priority = 1000,

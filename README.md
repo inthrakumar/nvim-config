@@ -1,1 +1,1 @@
-### Heavly Inspired from typecraft (especially catppuccin theme ) and primeagen
+#### Heavely Inspired from typecraft (especially catppuccin theme ) and primeagen

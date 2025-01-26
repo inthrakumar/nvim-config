@@ -5,7 +5,7 @@ return {
 		require("themery").setup({
 			themes = { "catppuccin","onedark", "everforest","tokyonight","rose-pine","solarized","dracula" }, -- Your list of installed colorschemes.
 			livePreview = true,
-            			vim.keymap.set("n", "<C-t>",":Themery<CR>", {})
+            			vim.keymap.set("n", "<leader>t",":Themery<CR>", {})
 		})
 	end,
 }

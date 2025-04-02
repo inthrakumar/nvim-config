@@ -6,7 +6,7 @@ return {
         require('lualine').setup({
 
             options = {
-                theme = 'papercolor_dark',  -- Use wal theme if you have lualine-wal installed
+                theme = 'gruvbox',  -- Use wal theme if you have lualine-wal installed
             }
         })
     end

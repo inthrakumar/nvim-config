@@ -15,11 +15,4 @@ vim.keymap.set("n", "y", '"+y')
 -- Disable netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-vim.api.nvim_create_autocmd("VimEnter", {
-	pattern = "*",
-	callback = function()
-		if vim.fn.argc() == 0 then
-			require("neo-tree.command").execute({ toggle = true })
-		end
-	end,
-})
+

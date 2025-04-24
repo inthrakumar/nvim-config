@@ -1,4 +1,16 @@
+function _G.get_oil_winbar()
+	local bufnr = vim.api.nvim_win_get_buf(vim.g.statusline_winid)
+	local dir = require("oil").get_current_dir(bufnr)
+	if dir then
+		return vim.fn.fnamemodify(dir, ":~")
+	else
+		-- If there is no current directory (e.g. over ssh), just show the buffer name
+		return vim.api.nvim_buf_get_name(0)
+	end
+end
+
 return {
+
 	"stevearc/oil.nvim",
 	---@module 'oil'
 	---@type oil.SetupOpts
@@ -27,6 +39,7 @@ return {
 			},
 			-- Window-local options to use for oil buffers
 			win_options = {
+				winbar = "%!v:lua.get_oil_winbar()",
 				wrap = false,
 				signcolumn = "no",
 				cursorcolumn = false,
@@ -39,7 +52,7 @@ return {
 			-- Send deleted files to the trash instead of permanently deleting them (:help oil-trash)
 			delete_to_trash = false,
 			-- Skip the confirmation popup for simple operations (:help oil.skip_confirm_for_simple_edits)
-			skip_confirm_for_simple_edits = false,
+			skip_confirm_for_simple_edits = true,
 			-- Selecting a new/moved/renamed file or directory will prompt you to save changes first
 			-- (:help prompt_save_on_select_new_entry)
 			prompt_save_on_select_new_entry = true,
@@ -85,11 +98,11 @@ return {
 				["g."] = { "actions.toggle_hidden", mode = "n" },
 				["g\\"] = { "actions.toggle_trash", mode = "n" },
 			},
-			-- Set to false to disable all of the above keymaps
+			-- sET TO false to disable all of the above keymaps
 			use_default_keymaps = true,
 			view_options = {
 				-- Show files and directories that start with "."
-				show_hidden = false,
+				show_hidden = true,
 				-- This function defines what is considered a "hidden" file
 				is_hidden_file = function(name, bufnr)
 					local m = name:match("^%.")
@@ -209,7 +222,8 @@ return {
 			keymaps_help = {
 				border = "rounded",
 			},
-            vim.keymap.set("n", "<leader>-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+			vim.keymap.set("n", "<leader>-", "<CMD>Oil<CR>", { desc = "Open parent directory" }),
+			vim.keymap.set("n", "<leader>+", require("oil").toggle_float),
 		})
 	end,
 	lazy = false,
